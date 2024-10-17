@@ -80,3 +80,5 @@ x[C+1]
 Por ultimo imprimo el valor de tribonacci de C+1 (el +1 del ejercicio)
 
 # DECLARAR C NO ERA NECESARIO, BAJO EL NUMEROOOOOOOOOOOO
+
+Misma logica pero sin declarar C, 3 bytes menos
