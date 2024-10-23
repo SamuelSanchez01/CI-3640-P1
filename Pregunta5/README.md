@@ -15,10 +15,13 @@ Se inicia el arhivo y solicita la entrada del usuario por entrada estándar
 Como puede ser tedioso correrlo 40 y tantas veces creé ForTest.apl que cuando se inicia debe usarse de la siguiente manera
 
 ```
-A n
+apl -f ForTest.apl
+A 10
+A 30
+A 25
 ```
 
-Y retornara lo solicitado con n
+Y retornará lo solicitado, el numero de 10, 30 25 y asi...
 
 Hay un script con python para verificar (se que es top codigos mas ineficientes pero estaba cansao y estaba probando nada mas que los resultados fuesen acorde)
 
@@ -31,9 +34,8 @@ python3 prueba.py
 ```
 n←⎕
 B←⌊2⍟n
-C←⌊2⍟(B!n)×((B-1)!n)÷n
 x←({⍵,+/¯3↑⍵}⍣n)1 2
-x[C+1]
+x[(⌊2⍟(B!n)×((B-1)!n)÷n)+1]
 ```
 
 ```
@@ -45,11 +47,6 @@ Declara n y ese cuadrado es solicitar que el usuario marque el input numerico
 B←⌊2⍟n
 ```
 Declara B y le asigna el valor de el piso (⌊) del logaritmo base 2 de n (2⍟n)
-
-```
-C←⌊2⍟(B!n)×((B-1)!n)÷n
-```
-Declara C y le asigna el piso del logaritmo de base 2 de (B!n)×((B-1)!n)÷n. Normalmente ! seria not o factorial pero estamos en un lenguaje que se invento para tipear poco (y sufrir con el teclado aprendiendo), entonces B!n es el binomial de n entre B, o sea factorial de n entre factorial de B por factorial de n-B, por eso se declaro 2 B y  no se tipeo abajp, gastaba 4 caracteres mas
 
 ahora falta algo
 
@@ -74,11 +71,27 @@ ok, aqui vamos a separar en 3 partes, le estamos asignando a x un valor el cual 
 Podria surgir una duda y es como estoy agregando null 1 y 2 y es que apl lo toma como 0 y asi obtengo mi tribonacci
 
 ```
-x[C+1]
+x[(⌊2⍟(B!n)×((B-1)!n)÷n)+1]
 ```
 
-Por ultimo imprimo el valor de tribonacci de C+1 (el +1 del ejercicio)
+Por ultimo imprimo el valor de tribonacci de el logaritmo base 2 de:
 
-# DECLARAR C NO ERA NECESARIO, BAJO EL NUMEROOOOOOOOOOOO
+Binomial de B entre n, multiplicado por el binomial de b-1 entre n y todo dividido entre n
 
-Misma logica pero sin declarar C, 3 bytes menos
+# Se logró
+
+## Sección con chistes malos/chinazos
+
+¿A la otra gente cuánto le medirá? ¿Y el código?
+
+¿Te sirve que me mida 85?
+
+### Juan merece su subsección aparte
+
+Samuel, no entiendo por qué sigues esquizo si ya te lo vi y eres el que mas pequeño lo tiene
+
+Ese lo tiene muy grande, es impresionante
+
+Definitivamente lo tengo mas grande que tu
+
+Ella lo tenia muy largo y ayude a que lo tuviese mas pequeño
